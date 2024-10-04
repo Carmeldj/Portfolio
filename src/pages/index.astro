@@ -1,0 +1,183 @@
+---
+import Button from "../components/Button.astro";
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import SkillCard from "../components/SkillCard.astro";
+import Title from "../components/Title.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Minimalist Portfolio" />
+    <title>slydragonn | Minimalist Portfolio</title>
+  </head>
+  <body>
+    <header><Navbar /></header>
+    <main>
+      <section class="about">
+        <img src="dragon.png" alt="profile picture" />
+        <article>
+          <p>Hi!, I'm Carmel Djegui</p>
+          <Title text="Fullstack Developer" />
+        </article>
+        <!-- <Button message='Latest Posts' icon='/external-link.svg' link='#'/> -->
+      </section>
+      <section class="skills">
+        <Title text="Skilss & Technologies" />
+        <section>
+          <SkillCard
+            title="Frontend Development"
+            description="Developing websites with JavaScript and the best Frameworks like React and Vue"
+            icon="/design.svg"
+          />
+          <SkillCard
+            title="Backend Development"
+            description="Databases like MySQL and MongoDB. Developing APIs with JavaScript, Python and Php"
+            icon="/server.svg"
+          />
+        </section>
+      </section>
+      <section class="work">
+        <Title text="My Work" />
+        <section>
+          <ProjectCard
+            title="My Rotten tomatoes"
+            description="Rotten tomatoes like web site with Next Js and PosgreSQL. "
+            link="https://github.com/Carmeldj/C-COD-270-COT-2-3-c2cod270p0-vivien.ogoun"
+          />
+          <ProjectCard
+            title="FreeAds"
+            description="Ads publishing website, with Laravel the best Fullstack framework. "
+            link="https://github.com/Carmeldj/C-DEV-120-COT-1-2-freeads-gracias.daga"
+          />
+          <ProjectCard
+            title="Flask Blog"
+            description="Blog post website with flask like a fullstack framework. "
+            link="https://github.com/Carmeldj/C-COD-240-COT-2-3-flaskd02-carmel.djegui"
+          />
+        </section>
+      </section>
+      <section class="contact">
+        <Title text="Tell me about your next project" />
+        <Button
+          message="Send Message"
+          icon="/email.svg"
+          link="mailto:carmel.djegui@epitech.eu"
+        />
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    box-sizing: border-box;
+  }
+
+  main {
+    margin: 50px auto 0 auto;
+    max-width: 1020px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    height: calc(100vh - 50px);
+    text-align: center;
+    border-bottom: 1px solid rgb(30, 30, 30, 0.3);
+    padding: 0 20px;
+  }
+
+  .about > img {
+    width: 150px;
+    border-radius: 9999px;
+    object-fit: cover;
+  }
+
+  .about > article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .about > article > p {
+    color: #1e1e1e;
+    font-style: italic;
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+    align-items: center;
+    border-bottom: 1px solid rgb(30, 30, 30, 0.3);
+    padding: 0px 20px 100px 20px;
+  }
+
+  .skills > section {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .work {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+    align-items: center;
+    border-bottom: 1px solid rgb(30, 30, 30, 0.3);
+    padding: 0px 20px 100px 20px;
+  }
+
+  .work > section {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    padding: 0px 20px 100px 20px;
+  }
+
+  @media screen and (max-width: 700px) {
+    main {
+      margin: 0 auto;
+    }
+
+    .about {
+      height: 80vh;
+    }
+
+    .about > img {
+      width: 100px;
+    }
+  }
+</style>
